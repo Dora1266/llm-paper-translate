@@ -76,15 +76,15 @@ pip install flask requests PyMuPDF python-docx openpyxl mammoth lmdeploy waitres
 ### 步骤2: 部署LLM推理服务
 ```bash
 # 编辑LLM服务配置
-nano paste-2.txt  # 修改model_path指向你的模型目录
+nano server.py  # 修改model_path指向你的模型目录
 
 # 运行LLM服务
-python paste-2.txt
+python server.py
 ```
 
 成功启动后，您将看到:
 ```
-正在加载模型: D:\tran\models\DeepSeek-R1-Distill-Qwen-1.5B...
+正在加载模型: D:\tran\models\DeepSeek-R1-Distill-Qwen-1.5B...(以实际路径为准)
 模型加载完成！服务器准备就绪。
 启动工作线程 1/10
 ...
@@ -97,10 +97,10 @@ python paste-2.txt
 mkdir -p uploads translated
 
 # 编辑文档处理服务配置
-nano paste.txt  # 确认API_URL设置为http://localhost:8000/v1/chat/completions
+nano tran.py  # 确认API_URL设置为http://localhost:8000/v1/chat/completions
 
 # 运行文档处理服务
-python paste.txt
+python tran.py
 ```
 
 成功启动后，您将看到:
